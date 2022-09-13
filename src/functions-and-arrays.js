@@ -1,4 +1,5 @@
 // Iteration #1: Find the maximum
+console.log("ITERATION 1:");
 function maxOfTwoNumbers(num1, num2) {
   if (num1 === num2) {
     return num1;
@@ -11,6 +12,9 @@ function maxOfTwoNumbers(num1, num2) {
 console.log(maxOfTwoNumbers(4, 5));
 
 // Iteration #2: Find longest word
+
+console.log("ITERATION 2:");
+
 const words = [
   "mystery",
   "brother",
@@ -37,25 +41,44 @@ function findLongestWord(wordArray) {
 console.log(findLongestWord(words));
 
 // Iteration #3: Calculate the sum
+console.log("ITERATION 3.1:");
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-let sumCalc = 0;
-function sumNumbers(array) {
-  if (array == 0) return 0;
-  for (let i = 0; i < array.length; i++) {
-    sumCalc += array[i];
+function sumNumbers(arrayNumbers) {
+  let sumCalc = 0;
+  if (arrayNumbers == 0) return 0;
+  for (let i = 0; i < arrayNumbers.length; i++) {
+    sumCalc += arrayNumbers[i];
   }
   return sumCalc;
 }
 console.log(sumNumbers(numbers));
 
 // Iteration #3.2 Bonus:
-function sum() {}
+console.log("ITERATION 3.2 BONUS:");
+
+const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
+
+function sum(mixed) {
+  let sumMix = 0;
+  for (let i = 0; i < mixed.length; i++) {
+    if (typeof mixed[i] === "string") {
+      sumMix += mixed[i].length;
+    } else if (mixed[i] === true) {
+      sumMix += 1;
+    } else {
+      sumMix += mixed[i];
+    }
+  }
+  return sumMix;
+}
+console.log(sum(mixedArr));
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
+console.log("ITERATION 4.1:");
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-let sumCalc2 = 0;
 function averageNumbers(array) {
+  let sumCalc2 = 0;
   if (array == 0) return null;
   for (let i = 0; i < array.length; i++) {
     sumCalc2 += array[i];
@@ -65,6 +88,7 @@ function averageNumbers(array) {
 console.log(averageNumbers(numbersAvg));
 
 // Level 2: Array of strings
+console.log("ITERATION 4.2:");
 const wordsArr = [
   "seat",
   "correspond",
@@ -85,14 +109,21 @@ function averageWordLength(wordsArr) {
   for (let i = 0; i < wordsArr.length; i++) {
     total += wordsArr[i].length;
   }
-  return (avg = total / wordsArr.length);
+  return total / wordsArr.length;
 }
 console.log(averageWordLength(wordsArr));
 
 // Bonus - Iteration #4.1
-function avg() {}
+console.log("ITERATION 4.3 BONUS:");
+const mixedArr2 = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
+function avg(array) {
+  if (array == 0) return null;
+  return sum(array) / array.length;
+}
+console.log(avg(mixedArr2));
 
 // Iteration #5: Unique arrays
+console.log("ITERATION 5:");
 const wordsUnique = [
   "crab",
   "poison",
@@ -119,7 +150,17 @@ function uniquifyArray(wordsUnique) {
 }
 console.log(uniquifyArray(wordsUnique));
 
+// resultado clase
+// function uniquifyArray2(array) {
+//   let wordsRemoved2 = array.filter((word, index) => {
+//     return array.indexOf(word) === index;
+//   });
+//   return wordsRemoved2;
+// }
+// console.log(uniquifyArray2(wordsUnique));
+
 // Iteration #6: Find elements
+console.log("ITERATION 6:");
 const wordsFind = [
   "machine",
   "subset",
@@ -133,16 +174,16 @@ const wordsFind = [
 
 function doesWordExist(wordsFind, wordSearch) {
   if (wordsFind == 0) return null;
-  for (let i = 0; i < wordsFind.length; i++) {
-    if (wordsFind.includes(wordSearch)) {
-      return true;
-    } else {
-      return false;
-    }
+  if (wordsFind.includes(wordSearch)) {
+    return true;
+  } else {
+    return false;
   }
 }
 console.log(doesWordExist(wordsFind, "matter"));
+
 // Iteration #7: Count repetition
+console.log("ITERATION 7:");
 const wordsCount = [
   "machine",
   "matter",
@@ -170,6 +211,7 @@ function howManyTimes(wordsCount, wordToCount) {
 console.log(howManyTimes(wordsCount, "matter"));
 
 // Iteration #8: Bonus
+console.log("ITERATION 8 BONUS:");
 const matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [
@@ -235,7 +277,31 @@ const matrix = [
   ],
 ];
 
-function greatestProduct() {}
+function greatestProduct(array) {
+  let product = 0;
+  let maxProd = 0;
+
+  //rows
+  for (let i = 0; i < array.length; i++) {
+    //columnas
+    for (let j = 0; j < array.length; j++) {
+      //horizontasl
+      if (j - 3 >= 0) {
+        product =
+          array[i][j] * array[i][j - 1] * array[i][j - 2] * array[i][j - 3];
+        if (product > maxProd) maxProd = product;
+      }
+      //vertical
+      if (i - 3 >= 0) {
+        product =
+          array[i][j] * array[i - 1][j] * array[i - 2][j] * array[i - 3][j];
+        if (product > maxProd) maxProd = product;
+      }
+    }
+  }
+  return maxProd;
+}
+console.log(greatestProduct(matrix));
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
