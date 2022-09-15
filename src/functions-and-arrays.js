@@ -1,5 +1,4 @@
 // Iteration #1: Find the maximum
-console.log("ITERATION 1:");
 function maxOfTwoNumbers(num1, num2) {
   if (num1 === num2) {
     return num1;
@@ -9,11 +8,10 @@ function maxOfTwoNumbers(num1, num2) {
     return num2;
   }
 }
+console.log(`ITERATION 1. The maximum is:`);
 console.log(maxOfTwoNumbers(4, 5));
 
 // Iteration #2: Find longest word
-
-console.log("ITERATION 2:");
 
 const words = [
   "mystery",
@@ -38,10 +36,11 @@ function findLongestWord(wordArray) {
   }
   return finalWord;
 }
+console.log(`ITERATION 2. The longest word is:`);
 console.log(findLongestWord(words));
 
 // Iteration #3: Calculate the sum
-console.log("ITERATION 3.1:");
+
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 function sumNumbers(arrayNumbers) {
   let sumCalc = 0;
@@ -51,10 +50,10 @@ function sumNumbers(arrayNumbers) {
   }
   return sumCalc;
 }
+console.log("ITERATION 3.1. The sum is: ");
 console.log(sumNumbers(numbers));
 
 // Iteration #3.2 Bonus:
-console.log("ITERATION 3.2 BONUS:");
 
 const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 
@@ -71,11 +70,12 @@ function sum(mixed) {
   }
   return sumMix;
 }
+console.log("ITERATION 3.2 BONUS. The sum is:");
 console.log(sum(mixedArr));
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-console.log("ITERATION 4.1:");
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 function averageNumbers(array) {
   let sumCalc2 = 0;
@@ -85,10 +85,11 @@ function averageNumbers(array) {
   }
   return sumCalc2 / array.length;
 }
+console.log("ITERATION 4.1. The average is:");
 console.log(averageNumbers(numbersAvg));
 
 // Level 2: Array of strings
-console.log("ITERATION 4.2:");
+
 const wordsArr = [
   "seat",
   "correspond",
@@ -111,19 +112,21 @@ function averageWordLength(wordsArr) {
   }
   return total / wordsArr.length;
 }
+console.log("ITERATION 4.2. The average is:");
 console.log(averageWordLength(wordsArr));
 
 // Bonus - Iteration #4.1
-console.log("ITERATION 4.3 BONUS:");
+
 const mixedArr2 = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 function avg(array) {
   if (array == 0) return null;
   return sum(array) / array.length;
 }
+console.log("ITERATION 4.3 BONUS. The average is:");
 console.log(avg(mixedArr2));
 
 // Iteration #5: Unique arrays
-console.log("ITERATION 5:");
+
 const wordsUnique = [
   "crab",
   "poison",
@@ -148,6 +151,7 @@ function uniquifyArray(wordsUnique) {
   }
   return wordsRemoved;
 }
+console.log("ITERATION 5. The unique array is:");
 console.log(uniquifyArray(wordsUnique));
 
 // resultado clase
@@ -160,7 +164,7 @@ console.log(uniquifyArray(wordsUnique));
 // console.log(uniquifyArray2(wordsUnique));
 
 // Iteration #6: Find elements
-console.log("ITERATION 6:");
+
 const wordsFind = [
   "machine",
   "subset",
@@ -180,10 +184,11 @@ function doesWordExist(wordsFind, wordSearch) {
     return false;
   }
 }
+console.log("ITERATION 6. Finding word:");
 console.log(doesWordExist(wordsFind, "matter"));
 
 // Iteration #7: Count repetition
-console.log("ITERATION 7:");
+
 const wordsCount = [
   "machine",
   "matter",
@@ -208,10 +213,11 @@ function howManyTimes(wordsCount, wordToCount) {
   }
   return countTimes;
 }
+console.log("ITERATION 7. Count repetition:");
 console.log(howManyTimes(wordsCount, "matter"));
 
 // Iteration #8: Bonus
-console.log("ITERATION 8 BONUS:");
+
 const matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [
@@ -301,6 +307,7 @@ function greatestProduct(array) {
   }
   return maxProd;
 }
+console.log("ITERATION 8 BONUS. Adjacent numbers:");
 console.log(greatestProduct(matrix));
 
 // The following is required to make unit tests work.
